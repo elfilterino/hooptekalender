@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hoopter Kalender Online</title>
+  <title>📆 Hoopter Kalender Online</title>
   <style>
     :root {
       --bg-color-light: #ffffff;
@@ -148,16 +148,16 @@
   </style>
 </head>
 <body>
-  <h1>Hoopter Kalender Online</h1>
+  <h1>📆 Hoopter Kalender Online</h1>
 
   <div class="controls">
     <button id="themeToggle">🌗 Modus</button>
-    <button onclick="location.href='https://docs.google.com/document/d/1eYK5iNOtXUflUSx93grBZKru1vhppOqr1Btexh_GSkM/edit?usp=sharing'">Impressum</button>
-    <button onclick="location.href='https://calendar.google.com/calendar/u/0/r?cid=3ut2sjv47ebvr7igckosf42t7g@group.calendar.google.com'">📥 Importieren</button>
+    <button onclick="location.href='https://docs.google.com/document/d/1eYK5iNOtXUflUSx93grBZKru1vhppOqr1Btexh_GSkM/edit?usp=sharing'">ℹ️ Impressum</button>
+    <button onclick="location.href='https://calendar.google.com/calendar/u/0/r?cid=3ut2sjv47ebvr7igckosf42t7g@group.calendar.google.com'">📥 Import</button>
   </div>
 
   <div class="search-box">
-    <input type="text" id="searchInput" placeholder="🔍 Suche nach Veranstaltungen...">
+    <input type="text" id="searchInput" placeholder="🔍 Suchen...">
   </div>
 
   <div id="events"></div>
@@ -200,7 +200,7 @@
         if (event.description) {
           html += `
             <div class="event-buttons">
-              ➡️ <button class="info-button" onclick="this.parentElement.nextElementSibling.style.display = this.parentElement.nextElementSibling.style.display === 'block' ? 'none' : 'block'">Info</button>
+               <button class="info-button" onclick="this.parentElement.nextElementSibling.style.display = this.parentElement.nextElementSibling.style.display === 'block' ? 'none' : 'block'">📄 Info</button>
             </div>
             <div class="event-description">${event.description}</div>
           `;
