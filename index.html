@@ -185,13 +185,16 @@
 
         const start = new Date(event.start.dateTime || event.start.date);
         const dateStr = start.toLocaleDateString('de-DE', { weekday: 'short', day: '2-digit', month: '2-digit', year: 'numeric' });
-        const timeStr = start.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
+
+        // Check if this is an all-day event (has date but not dateTime)
+        const isAllDay = !event.start.dateTime;
+        const timeStr = isAllDay ? '' : start.toLocaleTimeString('de-DE', { hour: '2-digit', minute: '2-digit' });
 
         let html = `
           <div class="event-header">
             <span>${event.summary || 'Ohne Titel'}</span>
           </div>
-          <div class="event-time">📅 ${dateStr} 🕒 ${timeStr}</div>
+          <div class="event-time">📅 ${dateStr}${timeStr ? ' 🕒 ' + timeStr : ''}</div>
         `;
 
         if (event.location) {
